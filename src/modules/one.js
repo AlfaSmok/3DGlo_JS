@@ -1,10 +1,10 @@
 'use strick';
 
 const oneModule = () => {
-  const one = 'first module';
+  const one = 'one';
 
   console.log(one);
-  console.log('Hello');
+  
 };
 
 export default oneModule;

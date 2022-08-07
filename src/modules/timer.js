@@ -4,7 +4,6 @@ const timer = (deadline) => {
   const timerHours = document.getElementById('timer-hours');
   const timerMinutes = document.getElementById('timer-minutes');
   const timerSeconds = document.getElementById('timer-seconds');
-  let idInterval = setInterval;
 
   const getTimeRemaining = () => {
     let dateStop = new Date(deadline).getTime();
@@ -42,15 +41,17 @@ const timer = (deadline) => {
       timerMinutes.textContent = '00';
       timerSeconds.textContent = '00';
     }
+    console.log('start');
   };
-
-  updateClock();
-  if (timerHours.textContent == '00' && timerMinutes.textContent == '00' && timerSeconds.textContent == '00') {
-    clearInterval(idInterval);
-  } else {
-    idInterval(updateClock, 1000);
-  }
   
+  updateClock();
+  let idInterval = setInterval(() => {
+    updateClock();
+    if (timerHours.textContent == '00' && timerMinutes.textContent == '00' && timerSeconds.textContent == '00') {
+      clearInterval(idInterval);
+    }
+  },1000);
+
 };
 
 export default timer;

@@ -1,5 +1,9 @@
 'use strict';
 
 import timer from './modules/timer';
+import menu from './modules/menu';
+import modal from './modules/modal';
 
-timer('6 august 2022 13:14:00');
+timer('10 august 2022');
+menu();
+modal();

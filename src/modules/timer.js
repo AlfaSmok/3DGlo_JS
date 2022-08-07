@@ -41,7 +41,6 @@ const timer = (deadline) => {
       timerMinutes.textContent = '00';
       timerSeconds.textContent = '00';
     }
-    console.log('start');
   };
   
   updateClock();
